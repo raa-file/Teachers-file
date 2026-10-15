@@ -299,7 +299,6 @@ footer{margin-top:28px;text-align:center}
     <div class="dash-top">
       <div>
         <h1>لوحة التحكم<span>الأثر التعليمي والمهني</span></h1>
-        <div class="who" id="who"></div>
       </div>
       <div class="btns">
         <a class="ghost open" href="#" style="padding:10px 16px;background:none;border:1px solid var(--teal)">عرض الصفحة العامة</a>
@@ -560,7 +559,7 @@ async function route(){
   if(!sb){ $('page-login').classList.remove('hidden'); $('loginForm').classList.add('hidden'); $('setupNote').classList.remove('hidden'); return; }
   const {data:{session}} = await sb.auth.getSession();
   if(!session){ $('page-login').classList.remove('hidden'); return; }
-  $('who').textContent = session.user.email;
+
   $('page-dash').classList.remove('hidden');
   await load(); renderAdmin();
 }
